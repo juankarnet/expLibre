@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block section %}
+    <h1>Poemas para mi</h1>
+    <p>Espero disfrutes leyendo los poemas</p>
+
+    {% if poemas|length > 0 %}
+        <h2>Últimos poemas publicados</h2>
+        {% include 'poemas/poemas_loop.html' with poemas_list=poemas %}
+    {% else %}
+       <h3>Se el primero en publicar un poema!</h3>
+    {% endif %}
+
+{% endblock %}

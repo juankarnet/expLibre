@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block section %}
+    <h1>Mis poemas</h1>
+
+    {% if object_list|length > 0 %}
+        {% include 'poemas/poemas_loop.html' with poemas_list=object_list %}
+    {% else %}
+       <h3>Se el primero en publicar un poema!</h3>
+    {% endif %}
+
+{% endblock %}

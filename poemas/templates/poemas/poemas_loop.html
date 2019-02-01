@@ -1,0 +1,8 @@
+
+{% for poema in poemas_list %}
+    <div>
+        <a href="{% url 'poemas_detail' poema.pk%}"><h3>{{poema.titulo}}</h3></a>
+        <p>{{poema.texto}}</p>
+        <img src="{{poema.url}}" alt="{{poema.nombre}}" height="150px">
+    </div>
+{% endfor %}

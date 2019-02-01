@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Poesías libres para todos y de todos
+{% endblock %}
+
+{% block section %}
+    <h1>Bienvenido a la página de poesías</h1>
+    <p>Espero disfrutes leyendo los poemas</p>
+
+    {% if poemas_list|length > 0 %}
+        <h2>Últimos poemas publicados</h2>
+       {% include 'poemas/poemas_loop.html' %}
+    {% else %}
+       <h3>Se el primero en publicar uno!</h3>
+    {% endif %}
+
+{% endblock %}

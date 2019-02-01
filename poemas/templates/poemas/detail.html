@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{poema.titulo}}
+{% endblock %}
+
+{% block section %}
+
+    <h1>{{poema.titulo}}</h1>
+    <img src="{{poema.url}}" alt="{{poema.nombre}}">
+    <p>"{{poema.texto}}"</p>
+
+    <p>
+        <strong>Autor:</strong> {{poema.owner.first_name}} {{poema.owner.last_name}}
+    </p>
+
+{% endblock %}

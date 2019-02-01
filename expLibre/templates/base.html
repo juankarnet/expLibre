@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Poesías libres para todos y de todos {% endblock %}</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <a href="{% url 'poemas_home' %}">Home </a>
+    <a href="/"> H Hr</a>
+    |
+    <a href="{% url 'poemas_list' %}">Listado de poemas </a>
+    |
+    {% if user.is_authenticated %}
+       {{user.first_name}} {{user.last_name}}
+        <a href="{% url 'users_logout' %}"> Salir</a>
+        |
+        <a href="{% url 'create_poema' %}">Crear poema</a>
+        |
+        <a href="{% url 'user_poemas' %}">Mis poemas</a>
+    {% else %}
+        <a href="{% url 'users_login' %}">Entrar</a>
+    {% endif %}
+</nav>
+<hr>
+<section>
+    {% block section %} {% endblock %}
+</section>
+<hr>
+<small>
+    Exp Libre Inc &copy; Todos los derechos reservados
+</small>
+</body>
+</html>

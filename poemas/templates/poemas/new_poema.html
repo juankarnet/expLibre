@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    <h1>Creación de una nueva poesía</h1>
+{% endblock %}
+
+{% block section %}
+
+    {% if success_message %}
+        <span style="color:green">{{success_message|safe}}</span>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token   %}
+        {{ form.as_p }}
+
+        <div>
+            <button>Crear poesía</button>
+        </div>
+    </form>
+{% endblock %}
