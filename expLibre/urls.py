@@ -5,7 +5,7 @@ from users import urls as users_urls, api_urls as users_api_urls
 from poemas import urls as poema_urls, api_urls as poema_api_urls
 
 urlpatterns = [
-    url(r'^admin_tools/', include(admin_tools.urls)),
+    url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
     #users urls

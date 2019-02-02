@@ -131,6 +131,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_FINDERS ={
+    'default':{
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    }
+}
+
+
 #Log all Sql query
 LOGGING = {
     'version': 1,
